@@ -1745,7 +1745,7 @@ span.users {
 }
 .breadcrumb ul li.home-bread::after {
     position: absolute;
-    content: "\f105";
+    /* content: "\f105"; */
     font-family: fontAwesome;
     right: -10px;
     top: 0;
@@ -1918,7 +1918,7 @@ span.users {
     position: absolute;
     left: 0px;
     top: 6px;
-    content: "\e64c";
+    content: 0x2713;
     font-family: themify;
     width: 24px;
     height: 24px;
