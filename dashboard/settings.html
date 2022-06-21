@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from demo.quixlab.com/tradio-html/settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Feb 2022 04:03:10 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard |Settings </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-57x57.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="vendor/waves/waves.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/controllers/settingsController.js" type="module"></script>
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <div class="header dashboard">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
+                           <img src="https://d1egza9ueiv2hi.cloudfront.net/img/switchmarkets-logo-white.svg" alt="">
+
+                            <div class="header-right d-flex my-2 align-items-center">
+                                <div class="language">
+                                    <div class="dropdown">
+                                        <div class="icon" data-toggle="dropdown">
+                                            <i class="flag-icon flag-icon-us"></i>
+                                            <span>English</span>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a href="#" class="dropdown-item">
+                                                <i class="flag-icon flag-icon-bd"></i> Bengali
+                                            </a>
+                                            <a href="#" class="dropdown-item">
+                                                <i class="flag-icon flag-icon-fr"></i> French
+                                            </a>
+                                            <a href="#" class="dropdown-item">
+                                                <i class="flag-icon flag-icon-cn"></i> China
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_log">
+                                    <div class="profile_log dropdown">
+                                        <div class="user" data-toggle="dropdown">
+                                            <span class="thumb"><i class="mdi mdi-account"></i></span>
+                                            <span class="arrow"><i class="la la-angle-down"></i></span>
+                                        </div>
+
+                                        <div class="dropdown-menu dropdown-menu-end user-setting">
+                                            <div class="user-email">
+                                                <div class="user">
+                                                    <i class="thumb"><i class="mdi mdi-account"></i></i>
+                                                    <div class="user-info">
+                                                        <h6>Saiful Islam</h6>
+                                                        <span><a href="https://demo.quixlab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cabbbfa3b2a6aba8e4a9a5a78aada7aba3a6e4a9a5a7">[email&#160;protected]</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="user-balance">
+                                                <div class="available">
+                                                    <p>Available</p>
+                                                    <span>0.00 USD</span>
+                                                </div>
+                                                <div class="total">
+                                                    <p>Total</p>
+                                                    <span>0.00 USD</span>
+                                                </div>
+                                            </div>
+                                            <a href="account-overview.html" class="dropdown-item">
+                                                <i class="mdi mdi-account"></i> Account
+                                            </a>
+                                            <a href="data-tbi.html" class="dropdown-item">
+                                                <i class="mdi mdi-history"></i> History
+                                            </a>
+                                            <a href="settings.html" class="dropdown-item">
+                                                <i class="mdi mdi-settings"></i> Setting
+                                            </a>
+                                            <a href="lock.html" class="dropdown-item">
+                                                <i class="mdi mdi-lock"></i> Lock
+                                            </a>
+                                            <a href="#" class="dropdown-item logout">
+                                                <i class="mdi mdi-logout"></i> Logout
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="menu">
+                <ul>
+                    <!-- <li>
+                        <a href="index.html" data-toggle="tooltip" data-placement="right" title="Trade">
+                            <span><i class="mdi mdi-view-dashboard"></i></span>
+                        </a> -->
+                    </li>
+                    <!-- <li>
+                        <a href="exchange.html" data-toggle="tooltip" data-placement="right" title="Exchange">
+                            <span><i class="mdi mdi-tumblr-reblog"></i></span>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="account-overview.html" data-toggle="tooltip" data-placement="right" title="Accounts">
+                            <span><i class="mdi mdi-face-profile"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="data-tbi.html" data-toggle="tooltip" data-placement="right" title="Data">
+                            <span><i class="mdi mdi-database"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html" data-toggle="tooltip" data-placement="right" title="Setting">
+                            <span><i class="mdi mdi-settings"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-title dashboard">
+            <div class="container">
+                <div class="row dashloader">
+                    <div class="col-6">
+                        <div class="page-title-content">
+                            <p>Welcome Back,
+                                <span> Saiful Islam</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <ul class="text-end breadcrumbs list-unstyle">
+                            <li><a href="settings.html">Settings </a></li>
+                            <li class="active"><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card sub-menu">
+                            <div class="card-body">
+                                <ul class="d-flex">
+                                    <li class="nav-item">
+                                        <a href="settings.html" class="nav-link">
+                                            <i class="mdi mdi-account-settings-variant"></i>
+                                            <span>Edit Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="settings-preferences.html" class="nav-link">
+                                            <i class="mdi mdi-settings"></i>
+                                            <span>Preferences</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="settings-security.html" class="nav-link">
+                                            <i class="mdi mdi-lock"></i>
+                                            <span>Security</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="settings-account.html" class="nav-link">
+                                            <i class="mdi mdi-bank"></i>
+                                            <span>Linked Account</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="row setting-top-profile" >
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">User Profile</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="#">
+                                            <div class="row">
+                                               
+                                                <div class="mb-3 col-xl-12">
+                                                    <div class="d-flex align-items-center mb-3">
+                                                        <img class="me-3 rounded-circle me-0 me-sm-3"
+                                                            src="images/profile/2.png" width="50" height="50" alt="">
+                                                        <div class="flex-grow-1">
+                                                            <h5 class="mb-0">John Doe</h5>
+                                                            <p class="mb-0">Max file size is 20mb
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="file-upload-wrapper" data-text="Change Photo">
+                                                        <input name="file-upload-field" type="file"
+                                                            class="file-upload-field">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-success px-4">Save</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">User Profile</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="mb-3 col-xl-12">
+                                                    <label class="form-label">New Email</label>
+                                                    <input type="email" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="mb-3 col-xl-12">
+                                                    <label class="form-label">New Password</label>
+                                                    <input type="password" class="form-control"
+                                                        placeholder="**********">
+                                                    <p class="mt-2 mb-0">Enable two factor authencation on the security
+                                                        page
+                                                    </p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-success px-4">Save</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Personal Information</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form method="post" name="myform" class="personal_validate">
+                                            <div class="row">
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Your Name</label>
+                                                    <input type="text" class="form-control" placeholder="Saiful Islam"
+                                                        name="fullname">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Email</label>
+                                                    <input type="email" class="form-control"
+                                                        placeholder="Hello@example.com" name="email">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Date of birth</label>
+                                                    <input type="text" class="form-control" placeholder="10-10-2021"
+                                                        id="datepicker" autocomplete="off" name="dob">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Present Address</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="56, Old Street, Brooklyn" name="presentaddress">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Permanent Address</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="123, Central Square, Brooklyn"
+                                                        name="permanentaddress">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">City</label>
+                                                    <input type="text" class="form-control" placeholder="New York"
+                                                        name="city">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Postal Code</label>
+                                                    <input type="number" class="form-control" placeholder="25481"
+                                                        name="postal">
+                                                </div>
+                                                <div class="mb-3 col-xl-6 col-md-6">
+                                                    <label class="form-label">Wallet Address </label>
+                                                    <input type="text" class="form-control" placeholder="2548109876789" name="wallet_ad">
+                                                </div>
+
+                                                <div class="mb-3 col-12">
+                                                    <button type="submit" style="background-color: #28df46;  border: #28df46;" class="btn btn-primary mx-2">Save</button>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer dashboard">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-8 col-12">
+                        <div class="copyright">
+                            <p>© Copyright
+                                <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                                    var CurrentYear = new Date().getFullYear()
+                                    document.write(CurrentYear)
+                                </script> <a href="https://themeforest.net/user/quixlab/portfolio">Quixlab</a> I All
+                                Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-12">
+                        <div class="footer-social">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/global.js"></script>
+
+    <script src="vendor/waves/waves.min.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/plugins/jquery-ui-init.js"></script>
+    <script src="vendor/validator/jquery.validate.js"></script>
+    <script src="vendor/validator/validator-init.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+    </script>
+</body>
+
+
+<!-- Mirrored from demo.quixlab.com/tradio-html/settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Feb 2022 04:03:14 GMT -->
+</html>
