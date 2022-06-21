@@ -27,7 +27,7 @@ form.addEventListener('submit', async function(e){
 
         if(!userID) throw new Error("Invalid cridentials");
 
-       redirectPage(`/dashboard/account-overview.html#${userID}`);
+       redirectPage(`dashboard/account-overview.html#${userID}`);
 
 
         
