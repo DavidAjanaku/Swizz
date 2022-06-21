@@ -12,7 +12,7 @@ form.addEventListener('submit', async function(e){
         const inputs = Array.from(this.querySelectorAll('.inp'));
         inputs.forEach(inp => inp.value = null);
 
-        const response = await fetch('http://pygod-swizz.herokuapp.com/login/', {
+        const response = await fetch('https://pygod-swizz.herokuapp.com/login/', {
             method: 'POST',
             headers:  {
                 'Authorization': `Basic ${btoa('pygod:pygod')}`,
