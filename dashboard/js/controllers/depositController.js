@@ -1,7 +1,5 @@
 import dashLoader from "../views/dashLoaderView.js";
-import linkMenu from "../views/linkMenuView.js";
 import * as model from '../models/model.js';
-import sidebarView from "../views/sidebarView.js";
 import userProfileSettingView from "../views/userProfileSettingView.js";
 import loaderView from "../views/loaderView.js";
 import depositFormView from "../views/depositFormView.js";
@@ -14,23 +12,21 @@ import depositView from "../views/depositView.js";
 
 const controlLoadEntireView = async function(){
     try {
-        const userID = window.location.hash.slice(1);
+        const userID = sessionStorage.getItem("userID");
         if(!userID || userID == "") throw new Error("ID is null");
        
-        loaderView.render();
+        // loaderView.render();
         await model.loadUser(userID);
         await model.loadPlans();
-        loaderView.remove();
+        // loaderView.remove();
 
 
 
         Array.from([
             dashLoader,
-            linkMenu,
         ]).forEach(view => view.render(model.state.user));
 
         Array.from([
-          sidebarView,
           userProfileSettingView
         ]).forEach(view => view.update(model.state.user));
       

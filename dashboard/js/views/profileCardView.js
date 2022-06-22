@@ -3,8 +3,9 @@ import View from "./View.js";
 
 class ProfileCard extends View{
     _parentEl = document.querySelector('.profile_card');
-
+    
     _generateMarkup(){
+        console.log(this._data);
         return `
             <div class="card-body">
                 <div class="d-flex">
@@ -23,7 +24,7 @@ class ProfileCard extends View{
                 <ul class="card-profile__info">
                     <li>
                         <h5 class="me-4">Address</h5>
-                        <span class="text-muted">House 14, Road 9, Gulshan, Dhaka</span>
+                        <span class="text-muted">${this._data?.profile?.present_address}</span>
                     </li>
                     <li class="mb-1">
                         <h5 class="me-4">Total Log</h5>
