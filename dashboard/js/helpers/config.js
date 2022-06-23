@@ -1,8 +1,8 @@
 export const TIME_OUT_SEC = 15;
-export const API_URL_USERS = 'https://pygod-api.herokuapp.com/links/users/';
-export const API_URL_PROFILES = 'https://pygod-api.herokuapp.com/links/profiles/';
-export const API_URL_TRANSACTIONS = 'https://pygod-api.herokuapp.com/transactions';
-export const API_URL_PLANS = 'https://pygod-api.herokuapp.com/links/plans/';
+export const API_URL_USERS = 'https://pygod-swizz.herokuapp.com/links/users/';
+export const API_URL_PROFILES = 'https://pygod-swizz.herokuapp.com/links/profiles/';
+export const API_URL_TRANSACTIONS = 'https://pygod-swizz.herokuapp.com/transactions';
+export const API_URL_PLANS = 'https://pygod-swizz.herokuapp.com/links/plans/';
 export const GET_AUTHENTICATION_CONFIG = {
     method: 'GET',
     headers:{

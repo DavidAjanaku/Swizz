@@ -10263,6 +10263,7 @@ strong,
     top: 0;
     background-color: #f2f3f8;
     z-index: 999999999;
+    display: none;
 }
 
 .sk-three-bounce {
