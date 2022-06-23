@@ -47,7 +47,7 @@ thisForm.addEventListener('submit', async function (e) {
     }
 
     
-    const response = await fetch('https://pygod-swizz.herokuapp.com//links/users/create/', {
+    const response = await fetch('https://pygod-swizz.herokuapp.com/links/users/create/', {
         method: 'POST',
         headers:  {
             'Authorization': `Basic ${btoa('pygod:pygod')}`,

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard |Withdraw </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Aievari - HYIP Investment Business HTML Template Preview - ThemeForest_files/Swiss-01.jpg">
 
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="vendor/nice-select/css/nice-select.css">
@@ -22,6 +22,158 @@
 
 <body>
 
+    <style>
+        
+
+#success_tic .page-body{
+  max-width:300px;
+  background-color:#FFFFFF;
+  margin:10% auto;
+}
+ #success_tic .page-body .head{
+  text-align:center;
+}
+/* #success_tic .tic{
+  font-size:186px;
+} */
+#success_tic .close{
+      opacity: 1;
+    position: absolute;
+    right: 0px;
+    font-size: 30px;
+    padding: 3px 15px;
+  margin-bottom: 10px;
+}
+#success_tic .checkmark-circle {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.checkmark-circle .background {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #1ab394;
+  position: absolute;
+}
+#success_tic .checkmark-circle .checkmark {
+  border-radius: 5px;
+}
+
+.note{
+    font-size: 12px;
+    color: rgb(156, 153, 153);
+}
+#success_tic .checkmark-circle .checkmark.draw:after {
+  -webkit-animation-delay: 300ms;
+  -moz-animation-delay: 300ms;
+  animation-delay: 300ms;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-name: checkmark;
+  -moz-animation-name: checkmark;
+  animation-name: checkmark;
+  -webkit-transform: scaleX(-1) rotate(135deg);
+  -moz-transform: scaleX(-1) rotate(135deg);
+  -ms-transform: scaleX(-1) rotate(135deg);
+  -o-transform: scaleX(-1) rotate(135deg);
+  transform: scaleX(-1) rotate(135deg);
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+#success_tic .checkmark-circle .checkmark:after {
+  opacity: 1;
+  height: 75px;
+  width: 37.5px;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  transform-origin: left top;
+  border-right: 15px solid #fff;
+  border-top: 15px solid #fff;
+  border-radius: 2.5px !important;
+  content: '';
+  left: 35px;
+  top: 80px;
+  position: absolute;
+}
+
+@-webkit-keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+    </style>
+
     <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
@@ -30,6 +182,31 @@
         </div>
     </div>
 
+    <div id="success_tic" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <a class="close" href="#" data-dismiss="modal">&times;</a>
+            <div class="page-body">
+          <div class="head">  
+            <h3 style="margin-top:5px;">Withdrawal Request Successful</h3>
+            <h4 class="note">Your request to withdraw has been submitted. You will be notified once the transfer is completed or cancelled</h4>
+            <!-- <h4 class="note">Note: please pay the amount according to your plan paying an amount that its not equal to your plan would prove your </h4> -->
+      
+          </div>
+      
+        <h1 style="text-align:center;"><div class="checkmark-circle">
+        <div class="background"></div>
+        <div class="checkmark draw"></div>
+      </div><h1>
+      
+        </div>
+      </div>
+          </div>
+      
+        </div>
+
     <div id="main-wrapper">
 
         <div class="header dashboard">
@@ -37,7 +214,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <img src="https://d1egza9ueiv2hi.cloudfront.net/img/switchmarkets-logo-white.svg" alt="">
+                            <img src="../Aievari - HYIP Investment Business HTML Template Preview - ThemeForest_files/Swiss.png" width="100px" alt="">
 
                             <div class="header-right d-flex my-2 align-items-center">
                                 <div class="language">
@@ -189,12 +366,12 @@
                                             <span>Withdraw</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a href="account-api.html" class="nav-link">
                                             <i class="mdi mdi-database"></i>
                                             <span>API</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a href="account-affiliate.html" class="nav-link">
                                             <i class="mdi mdi-diamond"></i>
@@ -248,7 +425,7 @@
                                             </div>
 
                                             <div class="text-end">
-                                                <button class="btn btn-primary">Withdraw Now</button>
+                                                <button  type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#success_tic"  class="btn btn-primary">Withdraw Now</button>
                                             </div>
                                         </form>
                                     </div>
@@ -266,8 +443,7 @@
                                     <ul>
                                         <li>
                                             <i class="mdi mdi-checkbox-blank-circle"></i>
-                                            For security reasons, Tradio process withdrawals by review once a day. For
-                                            more information in this policy. Please see our wallet security page.
+                                            For security reasons, Swiss process withdrawals by review once a day. 
                                         </li>
                                         <li>
                                             <i class="mdi mdi-checkbox-blank-circle"></i>
