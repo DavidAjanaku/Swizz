@@ -28,7 +28,7 @@ form.addEventListener('submit', async function(e){
         if(!userID) throw new Error("Invalid cridentials");
 
         sessionStorage.setItem('userID',userID);
-       redirectPage(`./dashboard/account-overview.html`);
+       redirectPage(`dashboard/account-overview.html`);
 
 
         
