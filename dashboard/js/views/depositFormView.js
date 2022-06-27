@@ -18,7 +18,7 @@ class DepositForm extends View{
             <div class="col-sm-4">
                 <label for="inputEmail3" class="col-form-label">Amount ${this._data.plan}
                     <br />
-                    <small>Deposit amount range: ${this._data.min} - ${this._data.max > 10000 ? 'unlimited' : this._data.max} USD</small>
+                    <small>Deposit amount range: ${this._data.min} - ${this._data.max > 100000 ? 'unlimited' : this._data.max} USD</small>
                 </label>
             </div>
             <div class="col-sm-8">

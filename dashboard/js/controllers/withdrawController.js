@@ -57,7 +57,7 @@ const controlHandleWithdraw =  async function(){
         Promise.all([
           await model.makeTransaction(transactionRequestBody),
           setTimeout(() => {
-            window.location.href = '/main/dashboard/account-overview.html';
+            window.location.href = '../dashboard/account-overview.html';
           },1800)
         ])
    } catch (error) {
