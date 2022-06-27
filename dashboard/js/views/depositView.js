@@ -1,5 +1,5 @@
 class DepositView {
-    _parentEl = document.getElementById('deposits');1
+    _parentEl = document.getElementById('deposits');
 
     _getCurrentCoin(){
         return this._parentEl.querySelector('.nav-link.active').textContent;

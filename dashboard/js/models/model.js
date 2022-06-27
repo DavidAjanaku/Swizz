@@ -3,8 +3,13 @@ import { getJson, patchJson, postJson} from "../helpers/helpers.js"
 
 export const state = {
     user: {},
-    plans:[],
+    plans: [],
     transactions:[],
+    transactionTotal: {
+        totalDeposit: 0,
+        totalWithdrawal: 0,
+        availBal: 0,
+    },
     deposit:{
         plan: 'BTC',
         min: 50,
@@ -32,6 +37,7 @@ export const loadUser = async function(id){
 
 
 
+
     } catch (error) {
        console.error(error);
         throw error;
@@ -47,6 +53,7 @@ export const loadCurrentDepositPlan = function(plan,min, max = Number.MAX_SAFE_I
 export const makeTransaction = async function(data){
     try {
         const req = await postJson(`${API_URL_TRANSACTIONS}/create`, data);
+        console.log(req);
         
     } catch (error) {
         console.error(error);
@@ -93,12 +100,12 @@ export const updateUserProfile = async function(data){
 }
 
 
-export const loadPlans =  async function(){
-    try{
-        const {results:plans} = await getJson(`${API_URL_PLANS}`);
-        state.plans = plans;
-    }catch(error){
-        throw error;
+export const loadPlans =  async () => {
+    try {
+        const { results: plans } = await getJson(`${API_URL_PLANS}`)
+        state.plans = plans
+    } catch (error) {
+        throw error
     }
 }
 
@@ -114,7 +121,22 @@ export const getPlanID =  function(min, max){
 const loadTransactions = async function(id){
     try {
         const  req = await getJson(`${API_URL_TRANSACTIONS}`);
-        state.transactions = req.filter(tran => tran.user === id);
+        state.transactions = req.filter(tran => tran.user === id)
+        .reverse()
+        .map(transaction => {
+            transaction.type = transaction.type.toLowerCase();
+            return transaction;
+        })
+
+        const [lastTransaction] = state.transactions;
+
+        state.transactionTotal.totalDeposit = lastTransaction.allDeposit;
+        state.transactionTotal.totalWithdrawal = lastTransaction.allWithdraw;
+
+
+    //    state.transactionTotal.totalDeposit = state.transactions.filter(transaction => transaction.type === 'deposit').reduce((acc, cur) => acc+cur.amount,0);
+    //    state.transactionTotal.totalWithdrawal = state.transactions.filter(transaction => transaction.type === 'withdraw').reduce((acc, cur) => acc+cur.amount,0);
+
     } catch (error) {
         console.error(error);
         throw error;

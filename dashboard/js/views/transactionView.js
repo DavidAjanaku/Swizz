@@ -37,7 +37,6 @@ class transactionView extends View{
                 <td>${data.type}</td>
                 <td>${data.amount}</td>
                 <td>${data.status}</td>
-                <td>${data.amount}</td>
             </tr>
         `;
     }

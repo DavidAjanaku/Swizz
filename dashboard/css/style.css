@@ -10242,7 +10242,7 @@ strong,
     overflow: hidden;
     position: relative;
     z-index: 1;
-    margin-top: 60px;
+    margin: 60px 0 30px;
 }
 #main-wrapper.show {
     opacity: 1;
@@ -12464,6 +12464,11 @@ label.error {
 }
 .apps-download-content .btn-primary {
     background: #2a4eff;
+}
+
+.transaction-table{
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .transaction-table td {

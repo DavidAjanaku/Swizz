@@ -66,7 +66,16 @@ const controlMakeDeposit = async function(){
       type: "DEPOSIT",
     }
 
-    await model.makeTransaction(transactionRequestBody);
+    
+    Promise.all([
+      await model.makeTransaction(transactionRequestBody),
+      setTimeout(() => {
+        window.location.href = '/main/dashboard/account-overview.html';
+      },1800)
+    ])
+
+    
+    
 
   }catch (error) {
     console.error(error.message);

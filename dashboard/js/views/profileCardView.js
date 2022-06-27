@@ -5,7 +5,6 @@ class ProfileCard extends View{
     _parentEl = document.querySelector('.profile_card');
     
     _generateMarkup(){
-        console.log(this._data);
         return `
             <div class="card-body">
                 <div class="d-flex">

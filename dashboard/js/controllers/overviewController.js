@@ -4,6 +4,8 @@ import * as model from '../models/model.js';
 import transactionView from "../views/transactionView.js";
 import userProfileSettingView from "../views/userProfileSettingView.js";
 import loaderView from "../views/loaderView.js";
+import userStatusView from "../views/userStatusView.js";
+import availBalanceView from "../views/availBalanceView.js";
 
 
 
@@ -16,21 +18,27 @@ const controlLoadEntireView = async function(){
         if(!userID || userID == "") throw new Error("ID is null");
 
 
-        // loaderView.render();
+        loaderView.render();
         await model.loadUser(userID);
-        // loaderView.remove();
+        loaderView.remove();
 
+        availBalanceView.update(model.state.transactions[0])
+        
+        
         Array.from([
             dashLoader,
             profileCard,
         ]).forEach(view => view.render(model.state.user));
 
+        userStatusView.update(model.state.transactionTotal)
+        
 
         Array.from([
-          userProfileSettingView
+          userProfileSettingView  
         ]).forEach(view => view.update(model.state.user));
-      
+        
         transactionView.render(model.state.transactions);
+        
           
       } catch (error) {
         console.error(error);
