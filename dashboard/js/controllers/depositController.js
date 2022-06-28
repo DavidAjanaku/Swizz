@@ -55,7 +55,7 @@ const controlMakeDeposit = async function(){
 
     const depositPlanID = model.getPlanID(
       min,
-      (max > 100000 ? null : max)
+      (max > 10000 ? null : max)
     );
 
     
@@ -70,9 +70,8 @@ const controlMakeDeposit = async function(){
     Promise.all([
       await model.makeTransaction(transactionRequestBody),
       setTimeout(() => {
-        console.log('not working');
         window.location.href = '../dashboard/account-overview.html';
-      },1000)
+      },1800)
     ])
 
     

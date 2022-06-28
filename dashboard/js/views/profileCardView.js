@@ -25,17 +25,10 @@ class ProfileCard extends View{
                         <h5 class="me-4">Address</h5>
                         <span class="text-muted">${this._data?.profile?.present_address}</span>
                     </li>
-                    <li class="mb-1">
-                        <h5 class="me-4">Total Log</h5>
-                        <span>103 Time (Today 5 Times)</span>
-                    </li>
                     <li>
                         <h5 class="text-danger me-4">Last Log</h5>
-                        <span class="text-danger">3 February,
-                            <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                                var CurrentYear = new Date().getFullYear()
-                                document.write(CurrentYear)
-                            </script> , 10:00 PM
+                        <span class="text-danger">
+                        ${new Date().toDateString()}
                         </span>
                     </li>
                 </ul>

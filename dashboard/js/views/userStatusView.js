@@ -25,7 +25,7 @@ class UserStatusView extends View{
                 <div class="card text-center pt-2">
                     <div class="card-body">
                         <p class="mb-1">All Withdrawls</p>
-                        <h4>${this._data.totalWithdrawal} $</h4>
+                        <h4>${this._data.totalWithdrawal.toFixed(2)} $</h4>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@ class UserStatusView extends View{
                 <div class="card text-center pt-2">
                     <div class="card-body">
                         <p class="mb-1">Total Deposit </p>
-                        <h4>${this._data.totalDeposit} $</h4>
+                        <h4>${this._data.totalDeposit.toFixed(2)} $</h4>
                     </div>
                 </div>
             </div>        

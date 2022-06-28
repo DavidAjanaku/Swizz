@@ -47,7 +47,7 @@ const controlHandleWithdraw =  async function(){
         
         const transactionRequestBody = {
           amount: query,
-          plan_id: '5JnK0qB',
+          plan_id: 'EaRpXRK',
           user_id: model.state.user.id,
           type: "WITHDRAW",
         }

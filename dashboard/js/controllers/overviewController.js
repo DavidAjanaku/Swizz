@@ -22,8 +22,9 @@ const controlLoadEntireView = async function(){
         await model.loadUser(userID);
         loaderView.remove();
 
-        availBalanceView.update(model.state.transactions[0])
-        
+        if(model.state.transactions.length){
+          availBalanceView.update(model.state.transactions[0])
+        }        
         
         Array.from([
             dashLoader,

@@ -128,14 +128,14 @@ const loadTransactions = async function(id){
             return transaction;
         })
 
-        const [lastTransaction] = state.transactions;
 
-        state.transactionTotal.totalDeposit = lastTransaction.allDeposit;
-        state.transactionTotal.totalWithdrawal = lastTransaction.allWithdraw;
+        if(state.transactions.length){
+            const [lastTransaction] = state.transactions;
+    
+            state.transactionTotal.totalDeposit = lastTransaction.allDeposit;
+            state.transactionTotal.totalWithdrawal = lastTransaction.allWithdraw;
 
-
-    //    state.transactionTotal.totalDeposit = state.transactions.filter(transaction => transaction.type === 'deposit').reduce((acc, cur) => acc+cur.amount,0);
-    //    state.transactionTotal.totalWithdrawal = state.transactions.filter(transaction => transaction.type === 'withdraw').reduce((acc, cur) => acc+cur.amount,0);
+        }
 
     } catch (error) {
         console.error(error);
