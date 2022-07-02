@@ -63,7 +63,7 @@ thisForm.addEventListener('submit', async function (e) {
         if(!result.id) throw new Error(result.message);
         
         thisForm.reset();
-        window.location.href = '../login.html';
+        window.location.href = './login.html';
     } catch (error) {
         alert(error.message);
     }
