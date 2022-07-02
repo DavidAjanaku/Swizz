@@ -3,6 +3,8 @@ import View from "./View.js";
 class UserProfileSettingView extends View{
     _parentEl = document.querySelector('.dropdown-menu.dropdown-menu-end.user-setting');
 
+
+
     _generateMarkup(){
             return `
             <div class="user-email">
@@ -18,29 +20,39 @@ class UserProfileSettingView extends View{
             <div class="user-balance">
                 <div class="available">
                     <p>Available</p>
-                    <span>0.00 USD</span>
+                    <span>${this._data.transactionTotal.availBal.toFixed(2)} USD</span>
                 </div>
                 <div class="total">
                     <p>Total</p>
-                    <span>0.00 USD</span>
+                    <span>${this._data.transactionTotal.totalDeposit.toFixed(2)} USD</span>
                 </div>
             </div>
-            <a href="account-overview.html#${this._data.id}" class="dropdown-item">
+            <a href="account-overview.html" class="dropdown-item">
                 <i class="mdi mdi-account"></i> Account
             </a>
-            <a href="data-tbi.html#${this._data.id}" class="dropdown-item">
+            <a href="data-tbi.html" class="dropdown-item">
                 <i class="mdi mdi-history"></i> History
             </a>
-            <a href="settings.html#${this._data.id}" class="dropdown-item">
+            <a href="settings.html" class="dropdown-item">
                 <i class="mdi mdi-settings"></i> Setting
             </a>
-            <a href="lock.html#${this._data.id}" class="dropdown-item">
+            <a href="lock.html" class="dropdown-item">
                 <i class="mdi mdi-lock"></i> Lock
             </a>
             <a href="#" class="dropdown-item logout">
                 <i class="mdi mdi-logout"></i> Logout
             </a>
         `;
+    }
+
+
+    addLogoutHandler(handler){
+        this._parentEl.addEventListener('click', e => {
+            e.preventDefault();
+            const logoutBtn = e.target.closest('.logout');
+            if(!logoutBtn) return;
+            handler();
+        })
     }
 }
 

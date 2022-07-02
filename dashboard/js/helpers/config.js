@@ -3,6 +3,7 @@ export const API_URL_USERS = 'https://pygod-swizz.herokuapp.com/links/users/';
 export const API_URL_PROFILES = 'https://pygod-swizz.herokuapp.com/links/profiles/';
 export const API_URL_TRANSACTIONS = 'https://pygod-swizz.herokuapp.com/transactions';
 export const API_URL_PLANS = 'https://pygod-swizz.herokuapp.com/links/plans/';
+export const API_URL_LOGOUT = 'https://pygod-swizz.herokuapp.com/logout/'
 export const GET_AUTHENTICATION_CONFIG = {
     method: 'GET',
     headers:{

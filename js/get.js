@@ -46,103 +46,27 @@ thisForm.addEventListener('submit', async function (e) {
         }
     }
 
-    
-    const response = await fetch('https://pygod-swizz.herokuapp.com/links/users/create/', {
-        method: 'POST',
-        headers:  {
-            'Authorization': `Basic ${btoa('pygod:pygod')}`,
-            'Content-Type': 'application/json',
-    },
-        body: JSON.stringify(formData)
-    });
+    console.log(formData);
 
-    const result = await response.json();
-    console.log(result);
+    try {
+        
+        const response = await fetch('https://pygod-swizz.herokuapp.com/links/users/create/', {
+            method: 'POST',
+            headers:  {
+                'Authorization': `Basic ${btoa('pygod:pygod')}`,
+                'Content-Type': 'application/json',
+        },
+            body: JSON.stringify(formData)
+        });
 
-    Array
-    .from(this.querySelectorAll('input'))
-    .forEach(inp => inp.value = null);
+        const result = await response.json();
+        if(!result.id) throw new Error(result.message);
+        
+        thisForm.reset();
+        window.location.href = '../login.html';
+    } catch (error) {
+        alert(error.message);
+    }
 });
 
 
-
-
-
-
-// const postNewUser =  async function(){
-//     try{
-//         const postOptions = {
-//             method: 'POST',
-//             headers: {
-//                     'Authorization': `Basic ${btoa('pygod:pygod')}`,
-//                     'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({
-//                 first_name: "david",
-//                 username: "wilson",
-//                 last_name: "jacob",
-//                 password: "0000",
-//                 email: "pygod@mail.com",
-//                 profile: {
-//                     phone_number : "+23468596859685",
-//                     ref_code: 'admin234'
-//                 }
-//             })
-//         }
-        
-
-//         const resp = await fetch('https://pygod-api.herokuapp.com/links/users/create', postOptions)
-//         const data = resp.json();
-//         console.log(data);
-//     }
-//     catch(error){
-//         alert(error)
-//     }
-// }
-
-// postNewUser();
-
-
-
-
-// const fetchUsers = async function(){
-//     try{
-//         const fetchOptions = {
-//             method: 'GET',
-//             headers:{
-//                 'Authorization':`Basic ${btoa('pygod:pygod')}`
-//             }
-//         }
-//         const resp = await fetch('https://pygod-api.herokuapp.com/users/', fetchOptions);
-
-//         const {results} = await resp.json();
-//         console.log(results);
-
-//     }
-//     catch(err){
-
-
-
-//         alert(err)
-//     }
-// };
-
-// (async function(){
-//     try{
-//         const fetchOptions = {
-//             method: 'GET',
-//             headers:{
-//                 'Authorization':`Basic ${btoa('pygod:pygod')}`
-//             }
-//         }
-//         const resp = await fetch('https://pygod-api.herokuapp.com/links/users/', fetchOptions);
-
-//         const {results} = await resp.json();
-
-//         console.log(results);
-
-//     }
-//     catch(err){
-//         console.error(err);
-//     }
-// })();

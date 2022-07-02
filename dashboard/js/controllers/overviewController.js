@@ -22,21 +22,23 @@ const controlLoadEntireView = async function(){
         await model.loadUser(userID);
         loaderView.remove();
 
-        if(model.state.transactions.length){
-          availBalanceView.update(model.state.transactions[0])
-        }        
+        availBalanceView.update(model.state.transactionTotal)
         
         Array.from([
             dashLoader,
             profileCard,
         ]).forEach(view => view.render(model.state.user));
 
-        userStatusView.update(model.state.transactionTotal)
-        
 
-        Array.from([
-          userProfileSettingView  
-        ]).forEach(view => view.update(model.state.user));
+        userStatusView.update(model.state.transactionTotal)
+
+        const profileSettingData = {
+          firstname: model.state.user.firstname,
+          lastname: model.state.user.lastname,
+          transactionTotal: model.state.transactionTotal
+        }
+
+        userProfileSettingView.update(profileSettingData);
         
         transactionView.render(model.state.transactions);
         
@@ -52,6 +54,17 @@ const controlLoadEntireView = async function(){
       }
     
 }
+
+const handleLogout = function(){
+    model.userLogout()
+}
+
+
+const init = () => {
+  userProfileSettingView.addLogoutHandler(handleLogout)
+}
+
+init();
 
 Array.from(['load','hashchange']).forEach(evt => window.addEventListener(evt,controlLoadEntireView ))
 

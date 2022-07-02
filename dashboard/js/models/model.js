@@ -1,4 +1,4 @@
-import { API_URL_PLANS, API_URL_PROFILES, API_URL_TRANSACTIONS, API_URL_USERS, POST_AUTHENTICATION_CONFIG } from "../helpers/config.js"
+import { API_URL_LOGOUT, API_URL_PLANS, API_URL_PROFILES, API_URL_TRANSACTIONS, API_URL_USERS, POST_AUTHENTICATION_CONFIG } from "../helpers/config.js"
 import { getJson, patchJson, postJson} from "../helpers/helpers.js"
 
 export const state = {
@@ -34,6 +34,9 @@ export const loadUser = async function(id){
         // LOAD TRANSACTIONS FOR USER
         await loadTransactions(id);
 
+        state.transactionTotal.availBal = state.transactions?.[0]?.profit ?? 0;
+
+
 
 
 
@@ -53,8 +56,7 @@ export const loadCurrentDepositPlan = function(plan,min, max = Number.MAX_SAFE_I
 export const makeTransaction = async function(data){
     try {
         const req = await postJson(`${API_URL_TRANSACTIONS}/create`, data);
-        console.log(req);
-        
+        state.transactionTotal.availBal = state.transactions?.[0]?.profit ?? 0;
     } catch (error) {
         console.error(error);
         throw error;
@@ -114,6 +116,13 @@ export const getPlanID =  function(min, max){
 }
 
 
+export const userLogout = async function () {
+   const req = await getJson(API_URL_LOGOUT)
+   if(req !== 'User Logged out successfully') return;
+   sessionStorage.clear();
+   window.location.href = '../login.html';
+ }
+
 
 
 
@@ -142,3 +151,4 @@ const loadTransactions = async function(id){
         throw error;
     }
 }
+

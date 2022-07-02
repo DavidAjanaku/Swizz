@@ -15,10 +15,10 @@ const controlLoadEntireView = async function(){
         const userID = sessionStorage.getItem("userID");
         if(!userID || userID == "") throw new Error("ID is null");
        
-        // loaderView.render();
+        loaderView.render();
         await model.loadUser(userID);
         await model.loadPlans();
-        // loaderView.remove();
+        loaderView.remove();
 
 
 
@@ -26,9 +26,14 @@ const controlLoadEntireView = async function(){
             dashLoader,
         ]).forEach(view => view.render(model.state.user));
 
-        Array.from([
-          userProfileSettingView
-        ]).forEach(view => view.update(model.state.user));
+        const profileSettingData = {
+          firstname: model.state.user.firstname,
+          lastname: model.state.user.lastname,
+          transactionTotal: model.state.transactionTotal
+        }
+
+        userProfileSettingView.update(profileSettingData);
+        
       
 
           
@@ -55,7 +60,7 @@ const controlMakeDeposit = async function(){
 
     const depositPlanID = model.getPlanID(
       min,
-      (max > 10000 ? null : max)
+      (max > 100000 ? null : max)
     );
 
     
@@ -70,7 +75,7 @@ const controlMakeDeposit = async function(){
     Promise.all([
       await model.makeTransaction(transactionRequestBody),
       setTimeout(() => {
-        window.location.href = '../dashboard/account-overview.html';
+       new Promise.resolve(window.location.href = '../dashboard/account-overview.html')
       },1800)
     ])
 
@@ -89,6 +94,11 @@ const controlMakeDeposit = async function(){
  
 }
 
+const handleLogout = function(){
+  model.userLogout()
+}
+
+
 const controlCoinServiceChange = function(plan, minDeposit, maxDeposit){
   model.loadCurrentDepositPlan(plan, minDeposit, maxDeposit)
   depositFormView.render(model.state.deposit);
@@ -97,6 +107,7 @@ const controlCoinServiceChange = function(plan, minDeposit, maxDeposit){
 const init = function(){
   depositFormView.addMakeDepositHandler(controlMakeDeposit);
   depositView.addChangeRangeHandler(controlCoinServiceChange)
+  userProfileSettingView.addLogoutHandler(handleLogout);
 }
 
 init();

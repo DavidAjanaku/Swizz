@@ -13,17 +13,24 @@ const controlLoadEntireView = async function(){
     try {
         const userID = sessionStorage.getItem("userID");
         if(!userID || userID == "") throw new Error("ID is null");
-        // loaderView.render();
+        loaderView.render();
         await model.loadUser(userID);
-        // loaderView.remove();
+        loaderView.remove();
         Array.from([
           dashLoader,
         ]).forEach(view => view.render(model.state.user));
         Array.from([
           personalInfo,
-          userProfileSettingView,
           personalInfoTop
         ]).forEach(view => view.update(model.state.user));
+
+        const profileSettingData = {
+          firstname: model.state.user.firstname,
+          lastname: model.state.user.lastname,
+          transactionTotal: model.state.transactionTotal
+        }
+
+        userProfileSettingView.update(profileSettingData);
 
         
 
@@ -72,8 +79,16 @@ const controlUpdateUserProfile = async (data) =>{
 }
 
 
+const handleLogout = function(){
+  model.userLogout()
+}
+
+
+
+
 const init = function(){
   personalInfo.handleUpdateUserProfile(controlUpdateUserProfile);
+  userProfileSettingView.addLogoutHandler(handleLogout);
 }
 init();
 Array.from(['load','hashchange']).forEach(evt => window.addEventListener(evt,controlLoadEntireView ))

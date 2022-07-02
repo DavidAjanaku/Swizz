@@ -14,18 +14,21 @@ const controlLoadEntireView = async function(){
         const userID = sessionStorage.getItem("userID");
         if(!userID || userID == "") throw new Error("ID is null");
        
-        // loaderView.render();
+        loaderView.render();
         await model.loadUser(userID);
-        // loaderView.remove();
+        loaderView.remove();
 
         Array.from([
             dashLoader,
         ]).forEach(view => view.render(model.state.user));
 
-        Array.from([
-          userProfileSettingView
-        ]).forEach(view => view.update(model.state.user));
-      
+        const profileSettingData = {
+          firstname: model.state.user.firstname,
+          lastname: model.state.user.lastname,
+          transactionTotal: model.state.transactionTotal
+        }
+
+        userProfileSettingView.update(profileSettingData);
 
           
       } catch (error) {
@@ -47,7 +50,7 @@ const controlHandleWithdraw =  async function(){
         
         const transactionRequestBody = {
           amount: query,
-          plan_id: 'EaRpXRK',
+          plan_id: 'lpnO3ny',
           user_id: model.state.user.id,
           type: "WITHDRAW",
         }
@@ -57,8 +60,8 @@ const controlHandleWithdraw =  async function(){
         Promise.all([
           await model.makeTransaction(transactionRequestBody),
           setTimeout(() => {
-            window.location.href = '../dashboard/account-overview.html';
-          },1800)
+            new Promise.resolve(window.location.href = '../dashboard/account-overview.html')
+           },1800)
         ])
    } catch (error) {
        console.log(error);
@@ -66,9 +69,16 @@ const controlHandleWithdraw =  async function(){
   
 }
 
+const handleLogout = function(){
+  model.userLogout()
+}
+
+
+
 
 const init = function(){
   withdrawFormView.addMakeWithdrawHandler(controlHandleWithdraw)
+  userProfileSettingView.addLogoutHandler(handleLogout);
 }
 
 init();

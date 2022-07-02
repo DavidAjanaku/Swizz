@@ -8,7 +8,7 @@ class AvailBalanceView extends View{
         const availBal = new Intl.NumberFormat("en-US",{
             style: 'currency',
             currency:'USD'
-        }).format(this._data.profit)
+        }).format(this._data.availBal)
 
         return `
             <span>Available Balance</span>
